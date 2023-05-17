@@ -43,7 +43,7 @@ int distance(const int* restrict a, const int* restrict b, size_t len, int maxdi
 {
   int diff=0;
   for (size_t i=0; i < len; i++) {
-    if (a[i] != b[i]) {
+    if (a[i] != b[i] && a[i] != IGNORE_ALLELE && b[i] != IGNORE_ALLELE) {
       diff++;
       if (diff >= maxdiff) return maxdiff;
     }
